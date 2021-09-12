@@ -1,0 +1,4 @@
+
+select distinct extract(MONTH from HireDate)  || ' AM' as "theHour" , count(*) AS "sal"  from emp where  extract(MONTH from HireDate) < 11  group BY HireDate,sal 
+union 
+select distinct extract(MONTH from HireDate) || ' PM' as theHour,count(*) as "sal"  from emp where   extract(MONTH from HireDate) > 11  GROUP by HireDate,sal
